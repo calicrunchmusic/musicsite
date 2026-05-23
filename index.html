@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | CaliCrunchMusic</title>
+  <meta name="description" content="Official music promotion website for Christopher and 1100 ENT." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">cali<span>crunch</span>music</a>
+    <button class="menu-btn">Menu ▾</button>
+    <div class="dropdown">
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="bio.html">Bio</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="merch.html">Merch</a>
+      <a href="links.html">Links / Socials</a>
+      <a href="contact.html">Booking / Contact</a>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <div class="container">
+    <div class="kicker">1100 ENT Presents</div>
+    <h1><span class="gradient">Christopher</span></h1>
+    <p>Original, aesthetic, and passionate. A clean music hub with cinematic energy, animated sound waves, latest releases, visuals, merch, and social links.</p>
+    <div class="btns">
+      <a class="btn primary" href="music.html">Listen Now</a>
+      <a class="btn" href="links.html">Follow / Links</a>
+      <button class="btn" id="audioToggle">Play Music</button>
+    </div>
+    <div class="soundwaves" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <audio id="siteAudio" loop src="assets/site-music.mp3"></audio>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container release">
+    <div class="cover">Latest<br>Release<br>Artwork</div>
+    <div>
+      <span class="badge">Latest Release Banner</span>
+      <h2>New Music Out Now</h2>
+      <p class="lead">Swap this text with the current single, album, or promo campaign. This section is built to push streams first and keep the homepage simple but professional.</p>
+      <div class="player">
+        <strong>Featured Track Placeholder</strong>
+        <div class="progress"><span></span></div>
+      </div>
+      <div class="btns" style="justify-content:flex-start;margin-top:18px">
+        <a class="btn primary" href="music.html">Open Music</a>
+        <a class="btn" href="videos.html">Watch Videos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Artist Dashboard</h2>
+    <p class="lead">Quick access to the important parts of the brand: music, bio, visuals, merch, and booking.</p>
+    <div class="grid">
+      <a class="card" href="music.html"><h3>Music</h3><p>Embedded players, latest release, and platform buttons.</p></a>
+      <a class="card" href="bio.html"><h3>Bio</h3><p>Artist story, background, and brand description.</p></a>
+      <a class="card" href="gallery.html"><h3>Gallery</h3><p>Photos, promo shots, cover art, and video stills.</p></a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> CaliCrunchMusic.com • Built for Christopher / 1100 ENT
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
