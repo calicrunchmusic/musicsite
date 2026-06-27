@@ -6,9 +6,6 @@
   <title>Bio | CaliCrunchMusic</title>
   <meta name="description" content="Official music promotion website for Christopher and 1100 ENT." />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .site-bg{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;overflow:hidden;z-index:-10;background:#050505;pointer-events:none}.site-bg__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}.site-bg__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.62))}body{isolation:isolate}body>:not(.site-bg){position:relative;z-index:1}
-  </style>
 </head>
 <body>
   <div class="site-bg" aria-hidden="true">
@@ -18,16 +15,16 @@
     <div class="site-bg__overlay"></div>
   </div>
 
-
 <nav class="nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html">cali<span>crunch</span>music</a>
-    <button class="menu-btn">Menu ▾</button>
-    <div class="dropdown">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteMenu">Menu ▾</button>
+    <div class="dropdown" id="siteMenu">
       <a href="index.html">Home</a>
       <a href="music.html">Music</a>
       <a href="bio.html">Bio</a>
       <a href="gallery.html">Gallery</a>
+      <a href="videos.html">Videos</a>
       <a href="merch.html">Merch</a>
       <a href="links.html">Links / Socials</a>
       <a href="contact.html">Booking / Contact</a>
