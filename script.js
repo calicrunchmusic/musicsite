@@ -2,10 +2,33 @@ const menuBtn = document.querySelector(".menu-btn");
 const dropdown = document.querySelector(".dropdown");
 
 if (menuBtn && dropdown) {
-  menuBtn.addEventListener("click", () => dropdown.classList.toggle("open"));
-  document.addEventListener("click", (e) => {
-    if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
+  menuBtn.setAttribute("type", "button");
+  menuBtn.setAttribute("aria-expanded", "false");
+
+  menuBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = dropdown.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  dropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (e.target.tagName === "A") {
       dropdown.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("click", () => {
+    dropdown.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      dropdown.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
     }
   });
 }
