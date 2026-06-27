@@ -372,3 +372,23 @@ body.menu-open .dropdown{
     width:auto !important;
   }
 }
+
+
+/* CaliCrunch corner logos */
+.corner-logo{
+position:fixed;
+top:18px;
+width:52px;
+height:52px;
+object-fit:contain;
+z-index:9998;
+pointer-events:none;
+filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));
+}
+.corner-logo.left{left:28px;}
+.corner-logo.right{right:28px;}
+@media(max-width:768px){
+.corner-logo{width:40px;height:40px;top:16px}
+.corner-logo.left{left:12px}
+.corner-logo.right{right:12px}
+}
