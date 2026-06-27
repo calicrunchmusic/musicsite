@@ -271,3 +271,104 @@ body > .nav{
     width:auto;
   }
 }
+
+
+/* FINAL NAV + VIDEO BACKGROUND FIX
+   The menu must always sit ABOVE the hero/title/background video. */
+html, body{
+  min-height:100%;
+  margin:0;
+  overflow-x:hidden;
+}
+body{
+  background:#050505 !important;
+  isolation:auto !important;
+}
+.site-bg{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  height:100dvh !important;
+  overflow:hidden !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  background:#050505 !important;
+}
+.site-bg__video{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  display:block !important;
+}
+.site-bg__overlay{
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.72)), radial-gradient(circle at center,rgba(0,0,0,.08),rgba(0,0,0,.48)) !important;
+}
+body::before{display:none !important;}
+body::after{z-index:0 !important; pointer-events:none !important;}
+body > *:not(.site-bg):not(.nav){
+  position:relative;
+  z-index:2 !important;
+}
+.nav{
+  position:sticky !important;
+  top:0 !important;
+  z-index:2147483000 !important;
+  isolation:isolate !important;
+  overflow:visible !important;
+}
+.nav-inner{
+  position:relative !important;
+  z-index:2147483001 !important;
+  overflow:visible !important;
+}
+.menu-btn{
+  position:relative !important;
+  z-index:2147483003 !important;
+  pointer-events:auto !important;
+}
+.dropdown{
+  position:fixed !important;
+  top:76px !important;
+  right:max(4vw,24px) !important;
+  left:auto !important;
+  width:min(310px,90vw) !important;
+  display:none !important;
+  z-index:2147483647 !important;
+  pointer-events:auto !important;
+  background:rgba(8,8,14,.985) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  border-radius:18px !important;
+  padding:10px !important;
+  box-shadow:0 30px 100px rgba(0,0,0,.92) !important;
+  backdrop-filter:blur(18px) !important;
+  -webkit-backdrop-filter:blur(18px) !important;
+  max-height:calc(100vh - 95px) !important;
+  overflow:auto !important;
+}
+.dropdown.open,
+body.menu-open .dropdown{
+  display:block !important;
+}
+.dropdown a{
+  position:relative !important;
+  z-index:2147483647 !important;
+}
+.hero,.page-hero,.section,.footer{
+  z-index:2 !important;
+}
+@media(max-width:600px){
+  .dropdown{
+    top:70px !important;
+    left:4vw !important;
+    right:4vw !important;
+    width:auto !important;
+  }
+}
